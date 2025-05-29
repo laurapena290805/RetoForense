@@ -1,0 +1,511 @@
+/* Estilos base del nodo */
+.challenge-node {
+  background-color: #112240;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 25px;
+  border-left: 6px solid #1e3a8a;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.challenge-node.unlocked {
+  border-left-color: #00d1b2;
+  box-shadow: 0 8px 25px rgba(0, 209, 178, 0.2);
+}
+
+.challenge-node.completed {
+  border-left-color: #48c774;
+  background-color: #112240;
+}
+
+.challenge-node.locked {
+  opacity: 0.7;
+  background-color: #0b1426;
+}
+
+/* Encabezado */
+.challenge-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+
+.challenge-status-icon {
+  font-size: 1.5rem;
+}
+
+.challenge-title {
+  font-size: 1.6rem;
+  color: #64ffda;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.completed-badge {
+  background-color: #48c774;
+  color: #00251a;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Descripción */
+.challenge-description {
+  color: #cbd5e1;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+/* Formulario */
+.challenge-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.challenge-input {
+  background-color: #0b1426;
+  border: 2px solid #1e3a8a;
+  color: #ffffff;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.challenge-input:focus {
+  outline: none;
+  border-color: #00d1b2;
+  box-shadow: 0 0 0 3px rgba(0, 209, 178, 0.3);
+}
+
+/* Botones */
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.challenge-button {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.challenge-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.challenge-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.challenge-button.loading {
+  color: transparent;
+}
+
+.challenge-button.success {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.challenge-button.error {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.button-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.hint-button {
+  background: rgba(100, 255, 218, 0.1);
+  border: 2px solid #64ffda;
+  color: #64ffda;
+  padding: 14px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+  flex-grow: 1;
+}
+
+.hint-button:hover {
+  background: rgba(100, 255, 218, 0.2);
+}
+
+/* Mensajes */
+.error-message {
+  color: #ff6b6b;
+  background-color: rgba(255, 107, 107, 0.1);
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #ff6b6b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.error-icon {
+  font-size: 1.2rem;
+}
+
+.locked-container {
+  background-color: rgba(30, 58, 138, 0.2);
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.locked-message {
+  color: #93c5fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.locked-icon {
+  font-size: 1.2rem;
+}
+
+/* Pistas */
+.hint-box {
+  background-color: rgba(30, 58, 138, 0.2);
+  border-left: 4px solid #64ffda;
+  padding: 18px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 15px;
+}
+
+.hint-title {
+  color: #64ffda;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.flag-examples {
+  margin-top: 15px;
+}
+
+.flag-examples h5 {
+  color: #cbd5e1;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.flag-examples ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.flag-examples li {
+  margin-bottom: 6px;
+}
+
+.flag-examples code {
+  font-family: 'Roboto Mono', monospace;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #f8f8f2;
+}
+
+/* Estilos para el modal de pista */
+.hint-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.hint-modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.hint-modal-content {
+  position: relative;
+  background-color: #112240;
+  border: 1px solid #1e3a8a;
+  border-radius: 12px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  z-index: 1001;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hint-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #ccd6f6;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.hint-modal-close:hover {
+  color: #64ffda;
+}
+
+.hint-modal-title {
+  color: #64ffda;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.hint-modal-body {
+  color: #e6f1ff;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.default-hint {
+  background-color: rgba(30, 58, 138, 0.2);
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #64ffda;
+}
+
+.hint-modal-close-button {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.hint-modal-close-button:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transform: translateY(-2px);
+}
+
+/* ==================== */
+/* ESTILOS DE GANADOR */
+/* ==================== */
+
+.winner-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.winner-modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.winner-modal-content {
+  position: relative;
+  background: linear-gradient(135deg, #112240, #0b1426);
+  border: 3px solid #64ffda;
+  border-radius: 16px;
+  padding: 40px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  z-index: 2001;
+  box-shadow: 0 0 40px rgba(100, 255, 218, 0.4);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.winner-modal-content::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid #3b82f6;
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.winner-title {
+  color: #64ffda;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(100, 255, 218, 0.7);
+  animation: pulse 2s infinite;
+}
+
+.winner-message {
+  color: #e6f1ff;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.winner-details {
+  background-color: rgba(30, 58, 138, 0.3);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 25px 0;
+  border-left: 4px solid #3b82f6;
+}
+
+.winner-button {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.winner-button:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.winner-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 45%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 55%
+  );
+  transform: rotate(30deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  100% { transform: translateX(100%) rotate(30deg); }
+}
+
+/* Efectos de confeti (opcional) */
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #f00;
+  opacity: 0.7;
+  animation: confettiFall 5s linear forwards;
+}
+
+@keyframes confettiFall {
+  to {
+    transform: translateY(100vh) rotate(720deg);
+  }
+}
+
+/* Transición entre acertijo y reto */
+.challenge-phase-transition {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

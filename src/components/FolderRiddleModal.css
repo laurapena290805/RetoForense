@@ -1,0 +1,166 @@
+.folder-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1500;
+}
+
+.folder-modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.folder-modal-content {
+  position: relative;
+  background-color: #112240;
+  border: 2px solid #64ffda;
+  border-radius: 12px;
+  padding: 30px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 1501;
+  box-shadow: 0 0 30px rgba(100, 255, 218, 0.3);
+  animation: modalFadeIn 0.4s ease-out;
+}
+
+.folder-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #ccd6f6;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.folder-modal-title {
+  color: #64ffda;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.folder-modal-instructions {
+  color: #cbd5e1;
+  margin-bottom: 25px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.folder-riddle-box {
+  background-color: #1e293b;
+  border-left: 4px solid #3b82f6;
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 25px;
+}
+
+.folder-riddle-text {
+  color: #e2e8f0;
+  white-space: pre-wrap;
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+}
+
+.folder-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.folder-input {
+  background-color: #1e293b;
+  border: 2px solid #334155;
+  color: white;
+  padding: 14px;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+}
+
+.folder-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.folder-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.folder-submit {
+  flex: 1;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.folder-submit:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
+
+.folder-cancel {
+  flex: 1;
+  background: none;
+  border: 2px solid #64748b;
+  color: #e2e8f0;
+  padding: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.folder-cancel:hover {
+  border-color: #94a3b8;
+}
+
+.folder-error {
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.folder-tip {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #334155;
+  color: #64748b;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

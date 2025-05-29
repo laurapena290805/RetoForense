@@ -1,0 +1,204 @@
+/* Estilos base del sidebar */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000; /* Aumentado para asegurar que esté por encima */
+  display: flex;
+}
+
+.sidebar-backdrop {
+  flex: 1;
+}
+
+.sidebar-content {
+  width: 300px;
+  background-color: #112240;
+  padding: 20px;
+  overflow-y: auto;
+  border-right: 1px solid #1e3a8a;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1001; /* Mayor que el overlay */
+}
+
+/* Estilos para el modal de ayuda */
+.help-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1002; /* Mayor que el sidebar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.help-modal-content {
+  background-color: #112240;
+  border: 1px solid #1e3a8a;
+  border-radius: 8px;
+  padding: 25px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.help-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #ccd6f6;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1003;
+}
+
+.help-modal-close:hover {
+  color: #64ffda;
+}
+
+/* Estilos para el contenido de ayuda */
+.help-modal-title {
+  color: #64ffda;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.help-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 15px 0;
+  border: 1px solid #1e3a8a;
+  display: block;
+}
+
+.help-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.help-list {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.help-list li {
+  margin-bottom: 8px;
+}
+
+.help-modal-ok-button {
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-top: 20px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+
+.help-modal-ok-button:hover {
+  background-color: #1e40af;
+}
+
+/* Estilos para el contenido del sidebar (se mantienen igual) */
+.sidebar-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: #ccd6f6;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.sidebar-close:hover {
+  color: #64ffda;
+}
+
+.sidebar-title {
+  color: #64ffda;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #1e3a8a;
+}
+
+.sidebar-section {
+  margin-bottom: 25px;
+}
+
+.sidebar-section-title {
+  color: #e6f1ff;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  padding-left: 10px;
+  border-left: 3px solid #64ffda;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-menu-item {
+  padding: 12px 15px;
+  color: #ccd6f6;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-menu-item:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+  transform: translateX(5px);
+}
+
+.sidebar-footer {
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #1e3a8a;
+  color: #8892b0;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* Efectos de transición */
+.sidebar-content,
+.help-modal-content {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

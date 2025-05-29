@@ -1,0 +1,86 @@
+.folder-riddle-container {
+  background-color: #0f172a;
+  border: 2px solid #1e3a8a;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.folder-riddle-header h3 {
+  color: #64ffda;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.folder-instructions {
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+.riddle-box {
+  background-color: #1e293b;
+  border-left: 4px solid #3b82f6;
+  padding: 18px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 20px;
+}
+
+.riddle-text {
+  color: #e2e8f0;
+  white-space: pre-wrap;
+  font-family: 'Courier New', monospace;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.folder-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.folder-input {
+  background-color: #1e293b;
+  border: 2px solid #334155;
+  color: white;
+  padding: 14px;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+}
+
+.folder-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.folder-submit {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.folder-submit:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
+
+.folder-error {
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.folder-tip {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #334155;
+  color: #64748b;
+  font-size: 0.9rem;
+}
