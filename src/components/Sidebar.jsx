@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Sidebar.css";
 // Importa tus imágenes (asegúrate de tenerlas en tu proyecto)
 import murcielagoImage from '../assets/murcielago-code.jpeg';
-import cesarImage from '../assets/cesar-codigo.png';
+import cesarImage from '../assets/cesar-codigo.jpg';
 import morseImage from '../assets/morse.png';
 
 export default function Sidebar({ isOpen, onClose }) {
